@@ -21,7 +21,7 @@ playerImg = pygame.image.load(
     'assets/player.png')
 mixer.music.load(
     'assets/background.wav')
-mixer.music.play(-1)
+#mixer.music.play(-1)
 explosionSound = mixer.Sound(
     'assets/explosion.wav')
 fireSound = mixer.Sound(
@@ -88,7 +88,6 @@ class Player:
     def ystop(self):
         self.Y_change = 0
 
-
 class Boss:
     def __init__(self, x, y, input):
         self.X = x
@@ -122,7 +121,6 @@ class Boss:
         self.Y = 100
         self.blood = 50
 
-
 class Enemy:
     def __init__(self, input):
         self.X = random.randint(40, 700)
@@ -149,7 +147,6 @@ class Enemy:
         self.Y = random.randint(40, 200)
         self.blood = 5
 
-
 class EList:
     def __init__(self, num, input):
         self.enemy = []
@@ -173,7 +170,6 @@ class EList:
         for i in range(self.num):
             self.enemy[i].update()
 
-
 class Bullet:
     def __init__(self):
         self.X = 0
@@ -183,7 +179,6 @@ class Bullet:
 
     def bullet(self, x, y):
         screen.blit(bulletImg, (x, y))
-
 
 class Clip:
     def __init__(self, n, type):
@@ -257,7 +252,6 @@ class Clip:
         self.remain = self.num
         for i in range(self.num):
             self.clip[i].state = "ready"
-
 
 class Text:
     def __init__(self, x, y, input, large):
